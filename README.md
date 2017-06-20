@@ -8,7 +8,7 @@ A vaga foi publicada em diversas comunidades e sua descrição está disponível
 
 ## Sobre o teste
 
-Seu desafio será a criação de uma aplicação Laravel que permita o usuário usuário visualizar uma lista de cursos. Deve permitir também que o usuário consiga selecionar determinado item da lista para visualizar informações mais detalhadas.
+Seu desafio será a criação de uma aplicação Laravel que permita o usuário visualizar uma lista de cursos. Deve permitir também que o usuário consiga pesquisar por palavra-chave e selecionar determinado item da lista para visualizar informações mais detalhadas.
 
 Algumas observações:
 
