@@ -12,11 +12,11 @@ class CourseController extends BaseController
 
     public function getAll()
     {
-		return ['result' => Course::All()];
+		return ['result' => Course::with(['address', 'consultant'])->get()];
     }
 
     public function get($id)
     {
-    	return ['result' => Course::findOrFail($id)];
+    	return ['result' => Course::with(['address', 'consultant'])->findOrFail($id)];
     }
 }
