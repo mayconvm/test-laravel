@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  db:
+    container_name: test_db
+    image: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: senha-test
+    volumes:
+      - "./deploy/db/mysql:/var/lib/mysql"
+    ports:
+      - "3306"
+    networks:
+      test_net:
+        ipv4_address: 172.0.1.3
+
+
+#  NETWORK
+networks:
+  test_net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      - subnet: 172.0.1.0/24
+        gateway: 172.0.1.254
