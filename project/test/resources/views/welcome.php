@@ -88,9 +88,10 @@
         </div>
     </div>
 
-    <!-- DETAILS -->
+    <!-- DETAILS MOBILE-->
+    
 
-    <div ng-show="!details">
+    <div ng-show="!details && isMobile">
       
       <nav class="nav-extended">
         <div class="nav-wrapper light-blue darken-2">
@@ -131,6 +132,69 @@
           <div class="row">
             <div class="col offset-m4 m4 s4 offset-s4">
               <a class="waves-effect waves-light btn orange accent-3 black-text">INSCRIÇÃO</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- DETAILS DESKTOP-->
+
+    <div ng-show="!details && isDesktop">
+      <nav class="nav-extended">
+        <div class="nav-wrapper light-blue darken-2">
+            <ul class="left">
+              <li>
+                <a class="" href="javascript:void(0)" ng-click="details = true">
+                  <i class="material-icons left">arrow_back</i>
+                </a>
+              </li>
+            </ul>
+            <br>
+          <div class="nav-content">
+            <br> <br> <br> <br>
+            <br> <br> <br> <br>
+            <br> <br> <br> <br>
+          </div>
+        </div>
+
+        <div class="nav-content">
+        </div>
+      </nav>
+
+      <div class="container details desktop">
+
+
+        <div class="row ">
+          <div class="col s12 m12">
+            
+            <div class="card white-grey lighten-4">
+              
+              <div class="card-content grey-text">
+                <span class="card-title black-text">{{ itemDetail.title }}</span>
+                <p class="">
+                  {{ itemDetail.description }} 
+                </p>
+
+
+                <div class="list">
+                  <ul>
+                    <li> <i class="material-icons">today</i> {{ itemDetail.start | customDateInterval:itemDetail.finish }} </li>
+                    <li> <i class="material-icons">query_builder</i> {{ itemDetail.start | customHourInterval:itemDetail.finish }} </li>
+                    <li> <i class="material-icons">room</i> <a target="_new" href="http://maps.google.com"> {{ itemDetail.address.street }}, {{ itemDetail.address.number }}, {{ itemDetail.address.neighborhood }} - {{ itemDetail.address.city }} </a></li>
+                    <li> <i class="material-icons">send</i> R$ {{ itemDetail.price }} </li>
+                    <li> <i class="material-icons">label</i> {{ itemDetail.category }} </li>
+                    <li> <img src="{{ itemDetail.consultant.avatar }}" alt="" class="circle"> {{ itemDetail.consultant.name }} </li>
+                  </ul>
+                </div>
+
+                <div class="row">
+                  <div class="col offset-m5 m5 s4 offset-s4">
+                    <a class="waves-effect waves-light btn orange accent-3 black-text">INSCRIÇÃO</a>
+                  </div>
+                </div>
+
             </div>
           </div>
 
