@@ -22,6 +22,7 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 
+    <link rel="stylesheet" href="css/main.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
     <script type="text/javascript" src="js/moment.js"></script>
@@ -29,47 +30,6 @@
     <script type="text/javascript" src="js/TesteController.js"></script>
     <script type="text/javascript" src="js/service/CourseService.js"></script>
     <script type="text/javascript" src="js/filter/customDate.js"></script>
-    <style type="text/css">
-        
-
-        .details .nav-content {
-          height: 216px;
-        }
-
-        .details .list li {
-          vertical-align:middle;
-          display: flex;
-        }
-
-        .details .list li i{
-          margin-right: 15px;
-          margin-bottom: 10px;
-        }
-        .details .list li img {
-          margin-right: 20px;
-          width: 32px;
-          height: 32px;
-        }
-
-        .text-grey {
-          color: black;
-        }
-
-        nav .input-field {
-          border-radius: 10px;
-          margin-top: 10px;
-        }
-
-        nav .input-field input.search {
-          margin-bottom: 0px;
-        }
-
-        nav .input-field i {
-          margin-top: -10px;
-        }
-
-
-      </style>
   </head>
   <body ng-controller="TesteController" id="TesteController">
     
@@ -159,8 +119,8 @@
 
           <div class="list">
             <ul>
-              <li> <i class="material-icons">today</i> {{ itemDetail.start | customDate }} </li>
-              <li> <i class="material-icons">query_builder</i> De 14:30 as 16:00 - 1:30h </li>
+              <li> <i class="material-icons">today</i> {{ itemDetail.start | customDateInterval:itemDetail.finish }} </li>
+              <li> <i class="material-icons">query_builder</i> {{ itemDetail.start | customHourInterval:itemDetail.finish }} </li>
               <li> <i class="material-icons">room</i> <a target="_new" href="http://maps.google.com"> {{ itemDetail.address.street }}, {{ itemDetail.address.number }}, {{ itemDetail.address.neighborhood }} - {{ itemDetail.address.city }} </a></li>
               <li> <i class="material-icons">send</i> R$ {{ itemDetail.price }} </li>
               <li> <i class="material-icons">label</i> {{ itemDetail.category }} </li>
@@ -173,7 +133,7 @@
               <a class="waves-effect waves-light btn orange accent-3 black-text">INSCRIÇÃO</a>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>

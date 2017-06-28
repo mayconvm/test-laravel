@@ -11,13 +11,19 @@
 |
 */
 
+/**
+ * Rota para página principal
+ */
 Route::get('/', function () {
     return View::make('welcome');
 });
 
-// Route::namespace('course')->group(function () {
-//     // Controllers Within The "App\Http\Controllers\Course" Namespace
-	Route::get('/course', "CourseController@getAll");
+/**
+ * Rota para buscar todos os cursos
+ */
+Route::get('/course', "CourseController@getAll");
 
-	Route::get('/course/{id}', "CourseController@get")->where('id', '[0-9]+');
-// });
+/**
+ * Rota para pesquisa de um único curso
+ */
+Route::get('/course/{id}', "CourseController@get")->where('id', '[0-9]+');

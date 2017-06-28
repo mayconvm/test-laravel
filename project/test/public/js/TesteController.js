@@ -15,7 +15,9 @@ myAppTeste.controller('TesteController', ['$scope', 'courseService', function($s
     }
 
 
-    // search
+    /////////////
+    //  search //
+    /////////////
 
     $scope.listCourses = [];
     $scope.details = true;
@@ -32,27 +34,12 @@ myAppTeste.controller('TesteController', ['$scope', 'courseService', function($s
         alert(error);
     });
 
+    /**
+     * Método responsável para exibir a tela de detalhamento
+     * @param  {object}
+     */
     $scope.viewDetails = function __viewDetails(item) {
         $scope.details = false;
         $scope.itemDetail = item;
     }
-}]);
-
-
-myAppTeste.controller('TesteSearchController', ['$scope', 'courseService', function($scope, courseService) {
-    // pesquisa por palavras
-    // $scope.$watch('textSearch', (oldValue, newValue) => {
-    //     // aplicar debounce
-    //     // searchTextDebounce(newValue);
-    // });
-
-    // function searchTextDebounce(data) {
-    //     courseService.getAllSearch(data)
-    //     .then((data) => {
-    //         $scope.$root.listCourses = data.result;
-    //     })
-    //     .catch((error) => {
-    //         alert(error);
-    //     });
-    // }
 }]);
